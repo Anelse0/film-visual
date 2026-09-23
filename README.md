@@ -14,19 +14,19 @@
 
 编辑或审阅特定图片需要实际原图；普通文字任务不需要项目资料或 API 密钥。
 
-## 1.2.0 的服饰资产流程
+## 服饰资产
 
-服饰从混合的“服饰和道具”段落拆为 [独立流程](film-visual/references/clothing-assets.md)，覆盖资产范围、参考分工、成稿与审阅。默认采用**正面、白底、隐形人台式立体穿着展示**：衣服像被穿起一样有体积、松量与垂坠，人体及支撑不可见。
+[服饰资产流程](film-visual/references/clothing-assets.md)覆盖资产范围、参考分工、成稿与审阅。默认采用**正面、白底、隐形人台式立体穿着展示**：衣服像被穿起一样有体积、松量与垂坠，人体及支撑不可见。
 
 > 使用 film-visual：服饰资产设计，全队穿灰色训练 T 恤。
 
 现在这类简短请求会直接使用立体展示，单件只画完整上衣；整套按同一穿着体上的搭配关系组合。展示参考不会自动变成款式参考：球衣的号码、品牌、护肩和下装不会被复制进普通训练 T 恤。用户明确要平铺、真人试穿或动画媒介时仍按该任务执行，道具流程独立。
 
-[设计说明](docs/DESIGN-1.2.0.md)说明根因与改动；[验收报告](docs/VALIDATION.md)记录实际隔离测试及生成待测的范围。
+[验证摘要](docs/VALIDATION.md)记录实际测试结果与待测范围。
 
-## 1.1.0 的审美方法
+## 审美方法
 
-新增 [设计方法](film-visual/references/design-methods.md)、[7 条影视依据](film-visual/references/style-cases.md)和[目标驱动的看图审阅](film-visual/references/visual-review.md)。它们已接入实际方案与 prompt 入口：
+[设计方法](film-visual/references/design-methods.md)、[7 条影视依据](film-visual/references/style-cases.md)和[目标驱动的看图审阅](film-visual/references/visual-review.md)。它们已接入实际方案与 prompt 入口：
 
 - 风格：将形状、线条、边缘、材质和明暗组织成相容的选择；备选方向说明区别和代价。
 - 构图：处理人物/物件关系、视觉竞争、留白与边界；支持有意多中心和失衡。
@@ -42,7 +42,7 @@
 
 > 使用 film-visual：看这张图，保留粗颗粒与上方留白，只找最影响人物注意力的问题。
 
-案例摘要区分主创说明与方法推导；原作品的角色、地点、配色不会成为项目默认。[设计说明](docs/DESIGN-1.1.0.md)记录当时的调研与实现；行为证据见 [1.1.0 验收报告](docs/VALIDATION-1.1.0.md)。没有宣称模型经过训练或生成画质已经提升。
+案例摘要区分主创说明与方法推导；原作品的角色、地点、配色不会成为项目默认。方法指导 Agent 作出视觉选择，不代表底层模型经过训练或生成画质已通过验证。
 
 ## 安装
 
@@ -69,8 +69,8 @@ cd film-visual
 python3 -B -m unittest discover -s tests -p 'test_*.py' -v
 ```
 
-[验收报告](docs/VALIDATION.md)记录确定性测试与本轮实际隔离 Agent 用例，并链接历史验证。真实图像及视频生成效果均为 **待测**；文本行为通过不代表画质或动态连续性已验证。
+[验证摘要](docs/VALIDATION.md)记录确定性测试与隔离 Agent 用例结果，原始记录链接到 Git 历史。真实图像及视频生成效果均为 **待测**；文本行为通过不代表画质或动态连续性已验证。
 
 本仓库不包含开发参考包、项目人物和图片、认证信息或本地运行日志。独立安装包仅包含 `film-visual/` 自身，校验值见 [SHA256SUMS](dist/SHA256SUMS)。
 
-维护者可用 `python3 tools/build_release.py` 重建 ZIP，或用 `python3 tools/build_release.py --check` 核对当前发布包与源码逐文件一致。公开的测试输入和原始输出只做机器路径脱敏，见报告中的证据链接。
+维护者可用 `python3 tools/build_release.py` 重建 ZIP，或用 `python3 tools/build_release.py --check` 核对当前发布包与源码逐文件一致。
