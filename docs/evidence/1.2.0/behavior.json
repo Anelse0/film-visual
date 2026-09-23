@@ -1,0 +1,741 @@
+{
+  "date": "2026-09-23",
+  "version": "1.2.0",
+  "cli_version": "0.155.0-alpha.9.2",
+  "common_instruction": "使用本项目的 film-visual Skill 完成以下任务。只交付文字，不生成媒体、不上传、不联网检索、不修改文件。请读取实际需要的 Skill 模块。\n\n",
+  "records": [
+    {
+      "id": "C01",
+      "request": "使用 film-visual：服饰 资产 设计 Sharks 全队穿灰色训练 T 恤。",
+      "exit_code": 0,
+      "elapsed_seconds": 29.03,
+      "models": [
+        "gpt-6-astra"
+      ],
+      "available_skills": [
+        "- film-visual: 独立影视视觉开发：风格、构图、画幅、色彩与光线设计，场景和人物服饰道具方案，图像提示词、参考编辑与审阅、视频画面基调及已有 prompt 的授权视觉段修订。可从一句话开始；不创作故事对白和完整正式分镜，不自动生成媒体。 (file: r0/film-visual/SKILL.md)"
+      ],
+      "tool_calls": [
+        {
+          "type": "custom_tool_call",
+          "call_id": "call_Uyi4gq9qxmbkIHwaG6KiwFOB",
+          "name": "exec",
+          "input": "text(await tools.exec_command({cmd:\"cat .agents/skills/film-visual/SKILL.md\",\"max_output_tokens\":12000}));\n",
+          "status": "completed"
+        },
+        {
+          "type": "custom_tool_call_output",
+          "call_id": "call_Uyi4gq9qxmbkIHwaG6KiwFOB",
+          "output_block_types": [
+            "input_text",
+            "input_text"
+          ]
+        },
+        {
+          "type": "custom_tool_call",
+          "call_id": "call_08tDMXEKUWpRda48Bb2gR4iP",
+          "name": "exec",
+          "input": "text(await tools.exec_command({cmd:\"cat .agents/skills/film-visual/references/clothing-assets.md\",\"max_output_tokens\":14000}));\ntext(await tools.exec_command({cmd:\"cat .agents/skills/film-visual/references/design-methods.md\",\"max_output_tokens\":14000}));\n",
+          "status": "completed"
+        },
+        {
+          "type": "custom_tool_call_output",
+          "call_id": "call_08tDMXEKUWpRda48Bb2gR4iP",
+          "output_block_types": [
+            "input_text",
+            "input_text",
+            "input_text"
+          ]
+        }
+      ],
+      "image_blocks_returned": 0,
+      "commands": [
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/film-visual/SKILL.md'",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/film-visual/references/clothing-assets.md'",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/film-visual/references/design-methods.md'",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ],
+      "output": "**Sharks 全队灰色训练 T 恤｜设计提案**\n\n全队统一采用中灰色圆领短袖训练 T 恤：常规肩线、直身微宽松版型，袖长至上臂中段，平直下摆。面料提案为细密、哑光的速干针织，保留柔软垂坠与轻微弹性。不同队员仅调整尺码，款式、灰色本色、面料和领袖结构保持一致。未提供已确认标识，本版不添加队徽、队名文字、号码或品牌。\n\n**资产展示文字指令**\n\n单件灰色训练 T 恤，采用上述设计。肩部自然撑起，胸腰留有适度运动松量，衣身具有前后厚度；袖筒、领口与下摆保留合理内腔，柔软褶皱沿腋下和衣侧自然垂落，不贴出肌肉轮廓。采用完全不可见的隐形支撑，平视正面居中展示，完整保留双袖与下摆，四周留白，画幅贴合上衣轮廓。纯白无缝背景，左前上方中性柔光使灰色衣身呈现柔和明暗渐变，暗侧仍能读清织纹与接缝。仅展示这件上衣，不出现人体、人台、衣架、护肩或下装，不作平铺展示。\n\n状态：文字设计提案，未生成媒体。",
+      "completed": true,
+      "assessment": {
+        "result": "meets_case_criteria",
+        "reviewer": "development_agent",
+        "reason": "默认立体展示有肩部支撑、胸腰松量、袖筒内腔；单件范围、全队同款、无擅加标识和护肩。"
+      }
+    },
+    {
+      "id": "C02",
+      "request": "使用 film-visual：整套服饰资产，米色亚麻长袖衬衫和深蓝直筒长裤，衬衫不塞裤腰。给一条成图指令。",
+      "exit_code": 0,
+      "elapsed_seconds": 35.8,
+      "models": [
+        "gpt-6-astra"
+      ],
+      "available_skills": [
+        "- film-visual: 独立影视视觉开发：风格、构图、画幅、色彩与光线设计，场景和人物服饰道具方案，图像提示词、参考编辑与审阅、视频画面基调及已有 prompt 的授权视觉段修订。可从一句话开始；不创作故事对白和完整正式分镜，不自动生成媒体。 (file: r0/film-visual/SKILL.md)"
+      ],
+      "tool_calls": [
+        {
+          "type": "custom_tool_call",
+          "call_id": "call_9SKFSn8bYOt70g0YzyHEDHlf",
+          "name": "exec",
+          "input": "text(await tools.exec_command({cmd:\"cat .agents/skills/film-visual/SKILL.md\",max_output_tokens:12000}));\n",
+          "status": "completed"
+        },
+        {
+          "type": "custom_tool_call_output",
+          "call_id": "call_9SKFSn8bYOt70g0YzyHEDHlf",
+          "output_block_types": [
+            "input_text",
+            "input_text"
+          ]
+        },
+        {
+          "type": "custom_tool_call",
+          "call_id": "call_kfu3XrsKOcnSR1mvUhJNw2o2",
+          "name": "exec",
+          "input": "text(await tools.exec_command({cmd:\"cat .agents/skills/film-visual/references/clothing-assets.md\",max_output_tokens:12000}));\n",
+          "status": "completed"
+        },
+        {
+          "type": "custom_tool_call_output",
+          "call_id": "call_kfu3XrsKOcnSR1mvUhJNw2o2",
+          "output_block_types": [
+            "input_text",
+            "input_text"
+          ]
+        },
+        {
+          "type": "custom_tool_call",
+          "call_id": "call_ZJh51NMDGFgHg8HDIcUmVZQx",
+          "name": "exec",
+          "input": "text(await tools.exec_command({cmd:\"rg -n '^#' .agents/skills/film-visual/references/design-methods.md\",max_output_tokens:2000}));\n",
+          "status": "completed"
+        },
+        {
+          "type": "custom_tool_call_output",
+          "call_id": "call_ZJh51NMDGFgHg8HDIcUmVZQx",
+          "output_block_types": [
+            "input_text",
+            "input_text"
+          ]
+        },
+        {
+          "type": "custom_tool_call",
+          "call_id": "call_HxbJEYBEEQSWeBo4FNeilBgz",
+          "name": "exec",
+          "input": "text(await tools.exec_command({cmd:\"sed -n '23,78p' .agents/skills/film-visual/references/design-methods.md\",max_output_tokens:5000}));\n",
+          "status": "completed"
+        },
+        {
+          "type": "custom_tool_call_output",
+          "call_id": "call_HxbJEYBEEQSWeBo4FNeilBgz",
+          "output_block_types": [
+            "input_text",
+            "input_text"
+          ]
+        }
+      ],
+      "image_blocks_returned": 0,
+      "commands": [
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/film-visual/SKILL.md'",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/film-visual/references/clothing-assets.md'",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc \"rg -n '\"'^#'\"' .agents/skills/film-visual/references/design-methods.md\"",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc \"sed -n '23,78p' .agents/skills/film-visual/references/design-methods.md\"",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ],
+      "output": "整套服饰资产图：米色亚麻长袖衬衫搭配深蓝直筒长裤，在同一隐形穿着体上连贯展示。衬衫自然撑起肩部，衣身宽松有厚度，长袖垂落、袖口展开至正常长度，亚麻织纹与柔软褶皱清晰；衬衫下摆全部放在裤腰外，自然覆盖腰头，不塞腰、不局部掖入、不打结。长裤从衬衫下方自然衔接，裤腿保持直筒空间与重力垂感。支撑体完全不可见，领口、袖口仅露合理衣料内面。平视正面、居中竖幅，从衣领到裤脚完整入画，四周留白；纯白无缝背景，左前上方中性柔光配合轻柔补光，保留米色与深蓝本色、织物纹理及暗部层次。只呈现这套衬衫与长裤，不出现人体、皮肤、人台、衣架、支架、鞋或其他配件，不平铺、不拆分拼图。",
+      "completed": true,
+      "assessment": {
+        "result": "meets_case_criteria",
+        "reviewer": "development_agent",
+        "reason": "衬衫和长裤在同一隐形穿着体连贯展示，下摆覆盖裤腰，无塞腰、鞋或额外配件。"
+      }
+    },
+    {
+      "id": "C03",
+      "request": "使用 film-visual：水彩动画项目，设计一件白色薄棉长裙服饰资产。给一条成图指令。",
+      "exit_code": 0,
+      "elapsed_seconds": 28.35,
+      "models": [
+        "gpt-6-astra"
+      ],
+      "available_skills": [
+        "- film-visual: 独立影视视觉开发：风格、构图、画幅、色彩与光线设计，场景和人物服饰道具方案，图像提示词、参考编辑与审阅、视频画面基调及已有 prompt 的授权视觉段修订。可从一句话开始；不创作故事对白和完整正式分镜，不自动生成媒体。 (file: r0/film-visual/SKILL.md)"
+      ],
+      "tool_calls": [
+        {
+          "type": "custom_tool_call",
+          "call_id": "call_BttlgfsKS0rG5uCapMz4TpUu",
+          "name": "exec",
+          "input": "text(await tools.exec_command({cmd:\"cat .agents/skills/film-visual/SKILL.md\",max_output_tokens:12000}));\n",
+          "status": "completed"
+        },
+        {
+          "type": "custom_tool_call_output",
+          "call_id": "call_BttlgfsKS0rG5uCapMz4TpUu",
+          "output_block_types": [
+            "input_text",
+            "input_text"
+          ]
+        },
+        {
+          "type": "custom_tool_call",
+          "call_id": "call_akPsxIeeM2zqGR7INApBzlJe",
+          "name": "exec",
+          "input": "text(await tools.exec_command({cmd:\"cat .agents/skills/film-visual/references/clothing-assets.md .agents/skills/film-visual/references/design-methods.md\",max_output_tokens:16000}));\n",
+          "status": "completed"
+        },
+        {
+          "type": "custom_tool_call_output",
+          "call_id": "call_akPsxIeeM2zqGR7INApBzlJe",
+          "output_block_types": [
+            "input_text",
+            "input_text"
+          ]
+        }
+      ],
+      "image_blocks_returned": 0,
+      "commands": [
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/film-visual/SKILL.md'",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/film-visual/references/clothing-assets.md .agents/skills/film-visual/references/design-methods.md'",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ],
+      "output": "水彩动画风格的单件服饰资产：一件白色薄棉长裙，浅圆领、短袖、自然腰线，腰部细密抽褶连接及踝的微阔裙摆，无印花与装饰。肩部自然撑起，胸腰保留舒适松量，袖筒与领口有清晰内腔，裙身随重力形成轻柔纵褶，下摆略有不规则起伏；以完全不可见的隐形支撑呈现立体穿着形态。薄棉哑光、轻软，折叠处略厚，单层边缘轻微透光，不呈现纱裙或丝绸光泽。平视正面、居中竖幅，完整展示领口至裙摆，四周留白，纯白无缝背景。左上方中性柔光，以浅灰褶影和右侧柔和暗部区分白裙与白底，保留白色本色。采用透明水彩薄涂、轻微纸纹与柔和晕染，领口、腰缝和关键褶线清楚，其余边缘适度松软，细节简练。画面仅含这件长裙，不出现人体、皮肤、可见人台、衣架、支架及其他配饰，不平铺，不作摄影写实渲染。",
+      "completed": true,
+      "assessment": {
+        "result": "meets_case_criteria",
+        "reviewer": "development_agent",
+        "reason": "保留水彩、纸纹与薄棉垂坠，白裙以浅灰褶影和边缘区分白底，无球衣护肩或强制照片。"
+      }
+    },
+    {
+      "id": "C04",
+      "request": "使用 film-visual：灰色训练 T 恤服饰资产，这次明确要俯拍平铺，便于核对裁片形状。只给一条 prompt。",
+      "exit_code": 0,
+      "elapsed_seconds": 28.72,
+      "models": [
+        "gpt-6-astra"
+      ],
+      "available_skills": [
+        "- film-visual: 独立影视视觉开发：风格、构图、画幅、色彩与光线设计，场景和人物服饰道具方案，图像提示词、参考编辑与审阅、视频画面基调及已有 prompt 的授权视觉段修订。可从一句话开始；不创作故事对白和完整正式分镜，不自动生成媒体。 (file: r0/film-visual/SKILL.md)"
+      ],
+      "tool_calls": [
+        {
+          "type": "custom_tool_call",
+          "call_id": "call_PMn15z6qQKYv19KFZRVJPaim",
+          "name": "exec",
+          "input": "text(await tools.exec_command({cmd:\"cat .agents/skills/film-visual/SKILL.md\",\"max_output_tokens\":12000}));\n",
+          "status": "completed"
+        },
+        {
+          "type": "custom_tool_call_output",
+          "call_id": "call_PMn15z6qQKYv19KFZRVJPaim",
+          "output_block_types": [
+            "input_text",
+            "input_text"
+          ]
+        },
+        {
+          "type": "custom_tool_call",
+          "call_id": "call_p7dtAeaEfaQ3zBDnX2yuA4GK",
+          "name": "exec",
+          "input": "text(await tools.exec_command({cmd:\"cat .agents/skills/film-visual/references/clothing-assets.md\",\"max_output_tokens\":10000}));\n",
+          "status": "completed"
+        },
+        {
+          "type": "custom_tool_call_output",
+          "call_id": "call_p7dtAeaEfaQ3zBDnX2yuA4GK",
+          "output_block_types": [
+            "input_text",
+            "input_text"
+          ]
+        },
+        {
+          "type": "custom_tool_call",
+          "call_id": "call_MHQpJuPxguYZzV1Oxfnf4UWt",
+          "name": "exec",
+          "input": "text(await tools.exec_command({cmd:\"cat .agents/skills/film-visual/references/design-methods.md\",\"max_output_tokens\":8500}));\n",
+          "status": "completed"
+        },
+        {
+          "type": "custom_tool_call_output",
+          "call_id": "call_MHQpJuPxguYZzV1Oxfnf4UWt",
+          "output_block_types": [
+            "input_text",
+            "input_text"
+          ]
+        }
+      ],
+      "image_blocks_returned": 0,
+      "commands": [
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/film-visual/SKILL.md'",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/film-visual/references/clothing-assets.md'",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/film-visual/references/design-methods.md'",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ],
+      "output": "单件灰色训练 T 恤服饰资产，写实服装平铺摄影：中性中灰色哑光运动针织面料，圆领、短袖、常规直身版型，无图案与标识。衣服正面朝上，完整平铺于纯白平整背景，双袖自然向两侧展开，衣身与袖片轻轻理平、不拉伸，避免折叠和堆褶遮挡裁片轮廓；清楚呈现肩线、袖窿接缝、侧缝、领口及袖口和下摆走线，便于核对可见裁片的形状与衔接。相机位于衣服正上方，垂直 90° 俯拍，成像平面与铺放面平行，无倾斜透视；衣服居中，领口至下摆及两侧袖口完整入画，四周留白。大面积中性柔光均匀照明，轻微侧向光保留缝线和织物纹理，灰色本色准确、边缘清晰。衣料贴近平面，不呈现胸腔撑起或袖筒鼓起的穿着体积；无人体、人台、衣架、支架、其他服饰或装饰物。",
+      "completed": true,
+      "assessment": {
+        "result": "meets_case_criteria",
+        "reviewer": "development_agent",
+        "reason": "执行明确的垂直俯拍平铺，衣料理平用于核对裁片，没有套回立体默认。"
+      }
+    },
+    {
+      "id": "C05",
+      "request": "使用 film-visual：新设计一位成年服装模特，真人试穿灰色训练 T 恤，保留脸和双手，正面全身。给一条成图指令。",
+      "exit_code": 0,
+      "elapsed_seconds": 30.69,
+      "models": [
+        "gpt-6-astra"
+      ],
+      "available_skills": [
+        "- film-visual: 独立影视视觉开发：风格、构图、画幅、色彩与光线设计，场景和人物服饰道具方案，图像提示词、参考编辑与审阅、视频画面基调及已有 prompt 的授权视觉段修订。可从一句话开始；不创作故事对白和完整正式分镜，不自动生成媒体。 (file: r0/film-visual/SKILL.md)"
+      ],
+      "tool_calls": [
+        {
+          "type": "custom_tool_call",
+          "call_id": "call_lmrhB52JD2V1iAjSYfMH5dEG",
+          "name": "exec",
+          "input": "text(await tools.exec_command({cmd:\"cat .agents/skills/film-visual/SKILL.md\",max_output_tokens:12000}));\n",
+          "status": "completed"
+        },
+        {
+          "type": "custom_tool_call_output",
+          "call_id": "call_lmrhB52JD2V1iAjSYfMH5dEG",
+          "output_block_types": [
+            "input_text",
+            "input_text"
+          ]
+        },
+        {
+          "type": "custom_tool_call",
+          "call_id": "call_RHURtoAqhM7XJJgbBODHGCj8",
+          "name": "exec",
+          "input": "const results = await Promise.allSettled([\ntools.exec_command({cmd:\"cat .agents/skills/film-visual/references/clothing-assets.md\",max_output_tokens:14000}),\ntools.exec_command({cmd:\"cat .agents/skills/film-visual/references/image-prompts.md\",max_output_tokens:14000}),\ntools.exec_command({cmd:\"cat .agents/skills/film-visual/references/design-methods.md\",max_output_tokens:14000})\n]); for(let i=0;i<results.length;i++)text({i,result:results[i]});\n",
+          "status": "completed"
+        },
+        {
+          "type": "custom_tool_call_output",
+          "call_id": "call_RHURtoAqhM7XJJgbBODHGCj8",
+          "output_block_types": [
+            "input_text",
+            "input_text",
+            "input_text",
+            "input_text"
+          ]
+        }
+      ],
+      "image_blocks_returned": 0,
+      "commands": [
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/film-visual/SKILL.md'",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/film-visual/references/design-methods.md'",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/film-visual/references/image-prompts.md'",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/film-visual/references/clothing-assets.md'",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ],
+      "output": "新设计一位约 28 岁的成年服装模特，短黑发、自然肤色、五官清晰，体态匀称，采用真实服装棚拍摄影风格。真人试穿中灰色圆领短袖训练 T 恤，哑光细密速干针织面料，无标识，肩线合体，胸腰保留适度松量，下摆自然垂落，清楚呈现袖筒空间、缝线及重力形成的柔和褶皱；搭配简洁黑色训练长裤和低调运动鞋。人物正面站立、直视镜头，双臂自然下垂并略离躯干，双手完整露出，手指自然舒展，不遮挡衣身。竖幅 2:3，正面全身居中，从头顶到鞋底完整入画，四周留适量余白，透视自然。浅米白无缝背景，左前方大面积中性柔光，右侧轻柔补光，以细微明暗呈现灰色衣料体积，保留真实皮肤纹理和面料本色，脚下有轻微接触阴影。脸部与双手清晰可辨，不裁头、不裁手脚，不使用隐形人台，不添加道具、文字或水印。",
+      "completed": true,
+      "assessment": {
+        "result": "meets_case_criteria",
+        "reviewer": "development_agent",
+        "reason": "新设计真人全身试穿，脸、双手与人体保留；没有要求不存在的身份参考。"
+      }
+    },
+    {
+      "id": "C06",
+      "request": "使用 film-visual：一只旧黄铜钥匙，道具资产设计。只给一条成图指令。",
+      "exit_code": 0,
+      "elapsed_seconds": 24.53,
+      "models": [
+        "gpt-6-astra"
+      ],
+      "available_skills": [
+        "- film-visual: 独立影视视觉开发：风格、构图、画幅、色彩与光线设计，场景和人物服饰道具方案，图像提示词、参考编辑与审阅、视频画面基调及已有 prompt 的授权视觉段修订。可从一句话开始；不创作故事对白和完整正式分镜，不自动生成媒体。 (file: r0/film-visual/SKILL.md)"
+      ],
+      "tool_calls": [
+        {
+          "type": "custom_tool_call",
+          "call_id": "call_1wSgT0NvozZXnsTW9KGNalJV",
+          "name": "exec",
+          "input": "text(await tools.exec_command({cmd:\"cat .agents/skills/film-visual/SKILL.md\",max_output_tokens:12000}));\n",
+          "status": "completed"
+        },
+        {
+          "type": "custom_tool_call_output",
+          "call_id": "call_1wSgT0NvozZXnsTW9KGNalJV",
+          "output_block_types": [
+            "input_text",
+            "input_text"
+          ]
+        },
+        {
+          "type": "custom_tool_call",
+          "call_id": "call_wN9tdry2zFlIlJeG8irpj0Lt",
+          "name": "exec",
+          "input": "text(await tools.exec_command({cmd:\"cat .agents/skills/film-visual/references/image-prompts.md .agents/skills/film-visual/references/design-methods.md\",max_output_tokens:16000}));\n",
+          "status": "completed"
+        },
+        {
+          "type": "custom_tool_call_output",
+          "call_id": "call_wN9tdry2zFlIlJeG8irpj0Lt",
+          "output_block_types": [
+            "input_text",
+            "input_text"
+          ]
+        }
+      ],
+      "image_blocks_returned": 0,
+      "commands": [
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/film-visual/SKILL.md'",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/film-visual/references/image-prompts.md .agents/skills/film-visual/references/design-methods.md'",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ],
+      "output": "设计一只旧黄铜钥匙，写实影视道具资产图：全长约8厘米，椭圆镂空匙柄、实心圆柱匙杆，末端单侧扁平匙齿带两个矩形缺口，结构连接清楚、比例可信；黄铜呈暗金本色，凹处少量褐色氧化，握持边缘磨亮，表面细微划痕体现长期使用，无文字或徽记。钥匙自然平放于浅灰哑光台面，从斜上方近距离拍摄，完整呈现轮廓、匙齿形状与金属厚度；横向3:2画幅，匙柄朝左上、匙齿朝右下，主体占画面约四分之三。左上方大面积柔光形成柔和金属反射，右侧轻微补光保留暗部细节，接触阴影清晰自然，全物件清楚合焦；画面只呈现这一只钥匙，无其他道具、标注或水印。",
+      "completed": true,
+      "assessment": {
+        "result": "meets_case_criteria",
+        "reviewer": "development_agent",
+        "reason": "黄铜钥匙依据结构、表面磨损和台面接触设计，未调用服饰模块或套人台规则。"
+      }
+    },
+    {
+      "id": "C07",
+      "request": "使用 film-visual：reference-1.png、reference-2.png 只参考展示方式，为 Sharks 做灰色训练 T 恤资产。只要一条成图指令。",
+      "exit_code": 0,
+      "elapsed_seconds": 36.98,
+      "models": [
+        "gpt-6-astra"
+      ],
+      "available_skills": [
+        "- film-visual: 独立影视视觉开发：风格、构图、画幅、色彩与光线设计，场景和人物服饰道具方案，图像提示词、参考编辑与审阅、视频画面基调及已有 prompt 的授权视觉段修订。可从一句话开始；不创作故事对白和完整正式分镜，不自动生成媒体。 (file: r0/film-visual/SKILL.md)"
+      ],
+      "tool_calls": [
+        {
+          "type": "custom_tool_call",
+          "call_id": "call_M3Uw0WfWv5BBhlyqcsyyo8fS",
+          "name": "exec",
+          "input": "text(await tools.exec_command({cmd:\"pwd; rg --files -g 'AGENTS.md' -g 'SKILL.md' -g '*reference*' -g '*.md'\",\"max_output_tokens\":6000}));\ntext(await tools.exec_command({cmd:\"cat .agents/skills/film-visual/SKILL.md\",\"max_output_tokens\":10000}));\n",
+          "status": "completed"
+        },
+        {
+          "type": "custom_tool_call_output",
+          "call_id": "call_M3Uw0WfWv5BBhlyqcsyyo8fS",
+          "output_block_types": [
+            "input_text",
+            "input_text",
+            "input_text"
+          ]
+        },
+        {
+          "type": "custom_tool_call",
+          "call_id": "call_20cXNV6RByJs11tCNltyEJYo",
+          "name": "exec",
+          "input": "const r=await Promise.allSettled([tools.exec_command({cmd:\"cat .agents/skills/film-visual/references/clothing-assets.md\",\"max_output_tokens\":14000}),tools.exec_command({cmd:\"cat .agents/skills/film-visual/references/design-methods.md\",\"max_output_tokens\":10000}),tools.view_image({path:\"<TEST_PROJECT>/reference-1.png\"}),tools.view_image({path:\"<TEST_PROJECT>/reference-2.png\"})]);for(const x of r){if(x.status===\"fulfilled\"){if(x.value.image_url)image(x.value.image_url);else text(x.value)}else text(String(x.reason))}\n",
+          "status": "completed"
+        },
+        {
+          "type": "custom_tool_call_output",
+          "call_id": "call_20cXNV6RByJs11tCNltyEJYo",
+          "output_block_types": [
+            "input_text",
+            "input_text",
+            "input_text",
+            "input_image",
+            "input_image"
+          ]
+        }
+      ],
+      "image_blocks_returned": 2,
+      "commands": [
+        {
+          "command": "/bin/zsh -lc \"pwd; rg --files -g 'AGENTS.md' -g 'SKILL.md' -g '*reference*' -g '*.md'\"",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/film-visual/SKILL.md'",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/film-visual/references/clothing-assets.md'",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/film-visual/references/design-methods.md'",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ],
+      "output": "为 Sharks 制作一件灰色训练 T 恤独立资产图：圆领短袖、常规运动剪裁，胸腰保留适度活动松量，中灰色哑光速干针织面料，细密织纹与领口、袖口、下摆缝线清晰，不添加未经提供的队徽、文字、号码或品牌。reference-1.png、reference-2.png 仅参考正面居中、白底、隐形人台式立体穿着展示及材质呈现，不沿用其比赛球衣款式、配色、标识、护肩或下装。肩部按自然人体宽度撑起，衣身具有前后厚度并随重力柔软垂落，袖筒、领口和下摆保留真实内腔，褶皱自然克制，不贴出肌肉轮廓；支撑体完全不可见。平视正面，完整展示单件上衣至下摆，四周适度留白，纯白无缝背景；左前上方大面积中性柔光，右侧轻柔补光，以细微明暗渐变呈现灰色布料、接缝和空间体积，保持本色与哑光质感。画面不出现人体、皮肤、人台、衣架、支架、裤装或其他配件，不做平铺或多视图拼版。",
+      "completed": true,
+      "assessment": {
+        "result": "meets_case_criteria",
+        "reviewer": "development_agent",
+        "reason": "实际返回两张本地参考图的视觉输入；仅借展示，为灰 T 恤设计自然肩宽与立体体积，不抄比赛球衣、配色、标识、护肩、裤装。"
+      }
+    },
+    {
+      "id": "C08",
+      "request": "使用 film-visual：编辑 reference-2.png，保留原有上衣、裤子、腰带、黑红配色、14 号码和所有标识，只调整照明让黑面料纹理清楚。给一条完整编辑指令。",
+      "exit_code": 0,
+      "elapsed_seconds": 32.11,
+      "models": [
+        "gpt-6-astra"
+      ],
+      "available_skills": [
+        "- film-visual: 独立影视视觉开发：风格、构图、画幅、色彩与光线设计，场景和人物服饰道具方案，图像提示词、参考编辑与审阅、视频画面基调及已有 prompt 的授权视觉段修订。可从一句话开始；不创作故事对白和完整正式分镜，不自动生成媒体。 (file: r0/film-visual/SKILL.md)"
+      ],
+      "tool_calls": [
+        {
+          "type": "custom_tool_call",
+          "call_id": "call_EFo40WalkGNUXZ5ZI1hgQ10T",
+          "name": "exec",
+          "input": "text(await tools.exec_command({cmd:\"pwd && rg --files -g 'AGENTS.md' -g 'SKILL.md' -g 'reference-2.png' -g '*reference*' .agents .\",\"max_output_tokens\":3000})); \ntext(await tools.exec_command({cmd:\"cat .agents/skills/film-visual/SKILL.md\",\"max_output_tokens\":7000}));\n",
+          "status": "completed"
+        },
+        {
+          "type": "custom_tool_call_output",
+          "call_id": "call_EFo40WalkGNUXZ5ZI1hgQ10T",
+          "output_block_types": [
+            "input_text",
+            "input_text",
+            "input_text"
+          ]
+        },
+        {
+          "type": "custom_tool_call",
+          "call_id": "call_UTcAst7uV0mC66B5aCrs2EDk",
+          "name": "exec",
+          "input": "const r=await Promise.allSettled([tools.exec_command({cmd:\"cat .agents/skills/film-visual/references/clothing-assets.md\",\"max_output_tokens\":6500}),tools.exec_command({cmd:\"cat .agents/skills/film-visual/references/design-methods.md\",\"max_output_tokens\":6500}),tools.view_image({path:\"<TEST_PROJECT>/reference-2.png\"})]);for (let i=0;i<r.length;i++){if(r[i].status===\"fulfilled\"){if(i===2)image(r[i].value.image_url);else text(r[i].value)}else text(r[i].reason)}\n",
+          "status": "completed"
+        },
+        {
+          "type": "custom_tool_call_output",
+          "call_id": "call_UTcAst7uV0mC66B5aCrs2EDk",
+          "output_block_types": [
+            "input_text",
+            "input_text",
+            "input_text",
+            "input_image"
+          ]
+        }
+      ],
+      "image_blocks_returned": 1,
+      "commands": [
+        {
+          "command": "/bin/zsh -lc \"pwd && rg --files -g 'AGENTS.md' -g 'SKILL.md' -g 'reference-2.png' -g '*reference*' .agents .\"",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/film-visual/SKILL.md'",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/film-visual/references/design-methods.md'",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/film-visual/references/clothing-assets.md'",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ],
+      "output": "编辑 reference-2.png，仅调整服装受光：在画面左前上方设置大面积中性柔光，右前方加入较弱补光，适度提亮胸腹、腋下、腰部及裤腿黑面料的暗部，使原有织纹、网眼、缝线和褶皱清晰可辨；保留柔和的明暗渐变、褶皱深处与接缝遮蔽阴影，黑色仍呈深黑，不泛灰、不偏色，不增加塑料般高光，不用锐化或新增纹理伪造细节。完整保留原有上衣、裤子、腰带的版型、材质、褶皱位置、立体穿着形态和部件关系；黑红配色及白色细节不变，胸前与双肩的 14 号码、RAVENS 文字、B1G、H 徽记、全部勾形标识及其他原有标识的内容、字体、形状、位置、尺寸和颜色均保持不变，不增删或重绘。保持原图正面视角、构图、画幅、服装轮廓和白色背景，不添加人物、人台、支架或任何新物件。",
+      "completed": true,
+      "assessment": {
+        "result": "meets_case_criteria",
+        "reviewer": "development_agent",
+        "reason": "实际返回原图视觉输入；完整保留黑红整套、14 号码、RAVENS、B1G、H 及勾形标识，编辑指令仅调整受光；未声称编辑已执行。"
+      }
+    },
+    {
+      "id": "C09",
+      "request": "使用 film-visual：我有一张平铺的衬衫图，想改成立体穿着资产，但要求原外轮廓和所有褶皱的像素位置完全不变。目前没有附图，先判断这些要求能不能一起成立。",
+      "exit_code": 0,
+      "elapsed_seconds": 24.73,
+      "models": [
+        "gpt-6-astra"
+      ],
+      "available_skills": [
+        "- film-visual: 独立影视视觉开发：风格、构图、画幅、色彩与光线设计，场景和人物服饰道具方案，图像提示词、参考编辑与审阅、视频画面基调及已有 prompt 的授权视觉段修订。可从一句话开始；不创作故事对白和完整正式分镜，不自动生成媒体。 (file: r0/film-visual/SKILL.md)"
+      ],
+      "tool_calls": [
+        {
+          "type": "custom_tool_call",
+          "call_id": "call_QyGV37Lfb9V1wm3kaZW4eLtI",
+          "name": "exec",
+          "input": "text(await tools.exec_command({cmd:\"cat .agents/skills/film-visual/SKILL.md\",max_output_tokens:12000}));\n",
+          "status": "completed"
+        },
+        {
+          "type": "custom_tool_call_output",
+          "call_id": "call_QyGV37Lfb9V1wm3kaZW4eLtI",
+          "output_block_types": [
+            "input_text",
+            "input_text"
+          ]
+        },
+        {
+          "type": "custom_tool_call",
+          "call_id": "call_2PJMg6EloqhTClS3LGvSAxBd",
+          "name": "exec",
+          "input": "text(await tools.exec_command({cmd:\"cat .agents/skills/film-visual/references/clothing-assets.md\",max_output_tokens:14000}));\n",
+          "status": "completed"
+        },
+        {
+          "type": "custom_tool_call_output",
+          "call_id": "call_2PJMg6EloqhTClS3LGvSAxBd",
+          "output_block_types": [
+            "input_text",
+            "input_text"
+          ]
+        }
+      ],
+      "image_blocks_returned": 0,
+      "commands": [
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/film-visual/SKILL.md'",
+          "status": "completed",
+          "exit_code": 0
+        },
+        {
+          "command": "/bin/zsh -lc 'cat .agents/skills/film-visual/references/clothing-assets.md'",
+          "status": "completed",
+          "exit_code": 0
+        }
+      ],
+      "output": "**按真实、合理的立体穿着标准，这些要求不能同时作为硬性条件成立。**目前没有附图，能判断的是要求之间的冲突，不能判断这张衬衫具体需要改动哪些位置。\n\n平铺改为立体穿着，需要肩部撑起、衣身形成前后厚度、袖筒和领口形成空腔。这会改变衣料的受力、遮挡及投影，原有褶皱的位置和外轮廓通常也要随之调整。\n\n如果外轮廓和所有褶皱的位置都严格锁死，只调整明暗，可以尝试增强**立体错觉**，但不能保证得到合理的穿着形态。\n\n最小放宽建议是：**保留款式、配色、图案、标识与剪裁结构，允许为穿着体积必要地调整局部轮廓、褶皱及受光。**如果像素位置绝对不能动，就应将目标改为“平铺图的体积感增强”，而非“转换为立体穿着资产”。",
+      "completed": true,
+      "assessment": {
+        "result": "meets_case_criteria",
+        "reviewer": "development_agent",
+        "reason": "在无图条件下仅评要求，识别几何体积与像素锁定冲突；提出保留款式但放宽局部轮廓/褶皱/受光的最小改动。"
+      }
+    }
+  ],
+  "source_sha256": {
+    "README.md": "e610e143e46922756ccffc76eda92b3931f6b5c8b5b214ea6f331f03e1a183c5",
+    "SKILL.md": "2c308aed7fcf1137190c58daeb1837a042d5dd423640a7d9ecb6697ac8bc37cc",
+    "VERSION": "1e5b51cde515396a9fa762909cf8ca6584ccc564b325d2eebeea76175fe95c4d",
+    "references/clothing-assets.md": "dbe6be4b5a0c1c6fcecfc7f5bf8c2d2a732250955b6bc464728f4089df6fd318",
+    "references/design-methods.md": "f64768aa14bf50366f6d2b563b67f0467e3aba426ed83d34a8a993be0fef45b1",
+    "references/image-prompts.md": "1313282ce5bc82fcbb410e37d18c1013b1e188a94d1bb5b8cffbb3cf93d4af53",
+    "references/style-cases.md": "b89c9580c5696eb3e6399b0f6067629a625127258798c186db84cfd67b379bf3",
+    "references/video-look.md": "f9c5f27f97aaa073c7f894dd959ed2bef4075fbead75e8039b87a766a0af917f",
+    "references/visual-development.md": "ffe661f38b7c445b4e36378fbbc63350205ca41066d8ca08012124354405293c",
+    "references/visual-review.md": "937eb03f85d6ecc45ea77e5b2989415b5a83eff6504846c317d25a92720362b0",
+    "scripts/install.py": "0776a33a72acfdf87f1761fe95bc97675e41978821a1c88476dc871b309dced9",
+    "scripts/replace_visual.py": "77b270a54d1abf137dcf8ff76431d37b0d3b7492839600c0781de12ec5ee415c",
+    "templates/scene-visual.md": "a68c022dbfe667df94ea007d426193e9f3989591cbaf0007a34e8d2060886d58",
+    "templates/visual-bible.md": "a3bf13c487318594ee230e4b99599161894d15b11e3415dd8b81db6e2dc37026",
+    "tests/cases.md": "9e912147c6fcc5c673aec2c0987ad5af64f155f314d1a371e723cd7e343d947c",
+    "tests/test_contract.py": "8a53b382d53f64e6620aa75683991665ef33c8aef2910c08394d03290816f28f"
+  },
+  "zip_sha256": "116bdd6758c2c57bbe3bcbe159a70d16e6a971cddf2a62384d14f5e64e0e1e82",
+  "all_9_installed_copies_match_source": true,
+  "fixture_metadata": {
+    "reference-1.png": {
+      "sha256": "316e682a3556644fbe235dfd84489c9a1e3553e2be31e30cf51526094c6c9bfc",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "source": "user-provided local reference; media excluded from repository"
+    },
+    "reference-2.png": {
+      "sha256": "ff0f03ade10a4f88fa7863c38654d88e5a96278a53370405c5961cec7129682b",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "source": "user-provided local reference; media excluded from repository"
+    }
+  },
+  "isolation_probe": {
+    "installed_skill": "readable",
+    "other_test_project": "OS denied",
+    "development_source": "OS denied",
+    "film_creative": "OS denied",
+    "film_director": "OS denied",
+    "handoff_archive": "OS denied",
+    "write_outside_work": "OS denied"
+  },
+  "limitations": [
+    "One sample per request, no blind evaluation or statistical stability claim.",
+    "No image/video generation, editing execution or media publishing.",
+    "C07/C08 original references are not distributed; exact visual replay requires authorized originals."
+  ]
+}
