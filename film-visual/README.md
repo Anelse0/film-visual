@@ -1,4 +1,4 @@
-# Film Visual 1.0.0
+# Film Visual 1.1.0
 
 可独立安装的影视视觉 Skill。入口为 [SKILL.md](SKILL.md)，方法、模板与工具均在此目录。无需其他影视 Skill、开发参考包、剧本格式、API 密钥或第三方 Python 包。语言与视觉判断由宿主模型提供；这不是离线语言模型，也不自带图像/视频生成器。
 
@@ -45,10 +45,13 @@ python3 -B -m unittest discover -s tests -p 'test_*.py' -v
 ## 内容与状态
 
 - [视觉开发与审阅](references/visual-development.md)：作品、地点、状态、机位及可见问题判断。
+- [审美设计方法](references/design-methods.md)：风格、构图、画幅、色彩和光线的具体选择与取舍。
+- [影视依据案例](references/style-cases.md)：六部作品及一项工作室流程的来源摘要、方法与迁移边界。
+- [看图审阅](references/visual-review.md)：按目标判断，局部修正，比较方案和修订前后。
 - [图像提示词](references/image-prompts.md)：MJ / GPT Image、身份与素材职责、官方适配来源。
 - [视频视觉](references/video-look.md)：直接基调、按区间修订、跨场照明和可选测试文本。
 - [作品模板](templates/visual-bible.md)、[场景模板](templates/scene-visual.md)：按需使用，不要求用户先填表。
 
-没有预装真实项目图片、角色或审美实例。本次只提炼交付参考中的通用方法；不打包其原文和资产。未附第三方素材授权或自行宣告其开源许可。
+没有预装用户项目图片或角色。影视依据只包含可追溯短摘要与方法归纳，不打包来源文章和影视媒体；其风格不成为通用默认。B/D 仍仅提取方法，不带入项目实例。未自行宣告第三方素材的开源许可。
 
 源码可用、文本边界通过、Agent 行为通过、图像通过、视频通过是不同状态。实际生成画质与动态效果需另行授权后验证，未运行就保持待测。

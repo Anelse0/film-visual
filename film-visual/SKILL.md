@@ -1,6 +1,6 @@
 ---
 name: film-visual
-description: 独立影视视觉开发：视觉方案、场景与人物服饰道具设计、MJ/GPT Image 提示词、参考图编辑指令和审阅、视频画面基调、已有 prompt 的授权视觉段修订。可直接处理一句话或普通素材；不创作故事对白和完整正式分镜，不自动生成媒体。
+description: 独立影视视觉开发：风格、构图、画幅、色彩与光线设计，场景和人物服饰道具方案，图像提示词、参考编辑与审阅、视频画面基调及已有 prompt 的授权视觉段修订。可从一句话开始；不创作故事对白和完整正式分镜，不自动生成媒体。
 ---
 
 # Film Visual
@@ -13,10 +13,12 @@ description: 独立影视视觉开发：视觉方案、场景与人物服饰道�
 | --- | --- | --- |
 | 作品视觉方案；新地点、换状态、补机位 | [visual-development](references/visual-development.md) | 一份具体首选方案；仅完整方案需要 [项目模板](templates/visual-bible.md) 或 [场景模板](templates/scene-visual.md) |
 | 一条图像 prompt；人物、服饰、道具；参考编辑 | [image-prompts](references/image-prompts.md) 的对应部分 | 一条填好的成稿或单项编辑指令 |
-| 图片哪里不好看 | [visual-development](references/visual-development.md) 的审阅部分 + 实际图片 | 观察、判断、修复建议 |
+| 图片哪里不好看；比较视觉方案 | [visual-review](references/visual-review.md) + 已提供的实际材料 | 依据目标的判断、取舍与局部修订建议 |
 | 视频基调、视觉段修订、明确要求的光线动态测试 | [video-look](references/video-look.md) | 直接交付基调、授权修订稿或最小技术测试 |
 
 只读取本次需要的模块。以最终产物和最新纠正判断任务，不用“场景”“视频”等单词机械路由。不默认输出全套方案、多个备选、资产清单或解释。用户只要一条 prompt，就只交一条；用户要完整修订稿，就完整返回。
+
+涉及风格选择、构图/画幅重构、配色或布光的实际设计时，按问题读取 [design-methods](references/design-methods.md) 的对应小节；需要作品依据、风格拆解或方法示例时再读 [style-cases](references/style-cases.md) 的相关案例。只做确定性文字替换不用加载审美材料。每次把选定方法落实成当前画面的空间、边缘、明暗、色彩或受光关系；不以名人标签代替设计，不把案例元素变成通用默认。
 
 ## 输入与设计判断
 
