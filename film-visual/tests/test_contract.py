@@ -23,6 +23,7 @@ def module(name):
 
 patcher = module("replace_visual")
 installer = module("install")
+counter = module("check_mj_prompt")
 
 
 def plan_for(data, pairs):
@@ -55,7 +56,7 @@ class Contract(unittest.TestCase):
                 self.assertNotIn(forbidden, content, file)
         # Imports are limited to the standard library; never import external Skill code.
         import ast
-        allowed = {"argparse", "hashlib", "json", "pathlib", "shutil", "tempfile"}
+        allowed = {"argparse", "hashlib", "json", "pathlib", "re", "shutil", "tempfile"}
         for file in ROOT.glob("scripts/*.py"):
             for node in ast.walk(ast.parse(file.read_text())):
                 if isinstance(node, ast.Import):
@@ -72,6 +73,56 @@ class Contract(unittest.TestCase):
             self.assertIn("待测", content)
             self.assertNotRegex(content, r"状态[：:]\s*(已采用|已验收)")
             self.assertEqual(content.count("{{"), content.count("}}"))
+
+
+class PromptBudget(unittest.TestCase):
+    def test_urls_and_parameter_tail_are_excluded(self):
+        prompt = 'https://example.invalid/ref.png?x=12 Eye-level gray T-shirt, soft light --ar 2:3 --no hanger, mannequin'
+        result = counter.measure(prompt)
+        self.assertEqual(result['body_words'], 5)
+        self.assertTrue(result['parameter_tail_present'])
+
+    def test_quoted_display_text_is_counted_not_parsed_as_parameters(self):
+        prompt = 'A sign reading "--no entry" beside a gate --ar 16:9'
+        self.assertEqual(counter.measure(prompt)['body_words'], 8)
+        self.assertEqual(counter.split_body(prompt)[1], '--ar 16:9')
+        self.assertEqual(counter.measure('A sign reading "say \\"hello\\""')['body_words'], 5)
+
+    def test_soft_budget_does_not_truncate_or_impose_minimum(self):
+        prompt = ' '.join(['gray'] * 51)
+        self.assertTrue(counter.measure(prompt, 'simple')['over_soft_budget'])
+        self.assertEqual(counter.measure(prompt, 'simple')['body_words'], 51)
+        self.assertIsNone(counter.measure(prompt, 'simple')['within_user_limit'])
+        self.assertFalse(counter.measure('Gray shirt', 'simple')['over_soft_budget'])
+
+    def test_non_english_is_not_reported_as_zero_word_success(self):
+        result = counter.measure('灰色训练服 gray shirt --ar 2:3')
+        self.assertFalse(result['word_budget_applicable'])
+        self.assertIsNone(result['body_words'])
+        self.assertIsNone(result['over_soft_budget'])
+        with self.assertRaises(ValueError):
+            counter.measure('灰色训练服', max_words=50)
+
+    def test_ambiguous_input_and_invalid_limit_rejected(self):
+        for prompt in ['', '--ar 16:9', '```text\ngray shirt\n```', 'A sign reading "hello']:
+            with self.subTest(prompt=prompt), self.assertRaises(ValueError):
+                counter.measure(prompt)
+        for limit in [0, -1, True, 3.5]:
+            with self.subTest(limit=limit), self.assertRaises(ValueError):
+                counter.measure('Gray shirt', max_words=limit)
+
+    def test_cli_hard_limit_exit_status_and_read_only_file(self):
+        with tempfile.TemporaryDirectory(dir=TEST_TMP) as tmp:
+            source = Path(tmp) / 'prompt.txt'
+            original = b'\xef\xbb\xbfGray shirt\r\n--ar 2:3\r\n'
+            source.write_bytes(original)
+            cmd = [sys.executable, '-B', str(ROOT/'scripts/check_mj_prompt.py'), '--input', str(source)]
+            for limit, status in [(2, 0), (1, 1)]:
+                result = subprocess.run(cmd + ['--max-words', str(limit)], capture_output=True)
+                self.assertEqual(result.returncode, status, result.stderr)
+                self.assertEqual(json.loads(result.stdout)['body_words'], 2)
+                self.assertEqual(source.read_bytes(), original)
+            self.assertEqual(list(Path(tmp).iterdir()), [source])
 
 
 class ByteReplacement(unittest.TestCase):

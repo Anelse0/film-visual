@@ -1,4 +1,4 @@
-# Film Visual 1.2.0
+# Film Visual 1.3.0
 
 可独立安装的影视视觉 Skill。入口为 [SKILL.md](SKILL.md)，方法、模板与工具均在此目录。无需其他影视 Skill、开发参考包、剧本格式、API 密钥或第三方 Python 包。语言与视觉判断由宿主模型提供；这不是离线语言模型，也不自带图像/视频生成器。
 
@@ -21,6 +21,8 @@
 服饰资产默认正面、白底、隐形人台式立体穿着展示：单件只展示该件，整套按穿着关系组合；保留衣服体积与垂坠，看不到人体或支撑。参考图的展示方式与衣服款式分开迁移。明确指定的平铺、真人试穿或项目媒介仍按当前要求处理。
 
 编辑特定原图需提供实际图片；仅文字任务不用上传图片。输出默认留在对话，只有用户要求才写文件。生成服务调用与媒体上传不在本版本中。
+
+MJ 提示词使用 [专用编写规则](references/midjourney.md)：先保留主体与空间关系，再压缩重复修饰。英文正文按内容采用 20–50、50–90 或 90–140 词的软预算，不是官方 token 上限；复杂任务可为必要信息超出。普通出图描述最终画面，Edit Model 可以直接写修改指令；用户明确词数或语言优先。
 
 ## 安装到指定项目
 
@@ -53,6 +55,7 @@ python3 -B -m unittest discover -s tests -p 'test_*.py' -v
 - [影视依据案例](references/style-cases.md)：六部作品及一项工作室流程的来源摘要、方法与迁移边界。
 - [看图审阅](references/visual-review.md)：按目标判断，局部修正，比较方案和修订前后。
 - [图像提示词](references/image-prompts.md)：MJ / GPT Image、身份与素材职责、官方适配来源。
+- [Midjourney](references/midjourney.md)：官方依据、入口区分、描述取舍、词量预算与只读计量工具。
 - [服饰资产](references/clothing-assets.md)：单件与整套范围、款式/展示参考分工、立体穿着成稿、服饰编辑与检查。
 - [视频视觉](references/video-look.md)：直接基调、按区间修订、跨场照明和可选测试文本。
 - [作品模板](templates/visual-bible.md)、[场景模板](templates/scene-visual.md)：按需使用，不要求用户先填表。

@@ -8,17 +8,9 @@
 
 实际看图后才给特定图片编辑或审阅结论。把每张参考分配到身份、服饰、空间、光色、构图之一或数项；保留与修改不得同时指向同一属性。自然语言中的文件名、图号或“首帧”不是上传动作；尚未上传就称本地参考，不写“已绑定”。
 
-## Midjourney 场景成稿
+## Midjourney 成稿与编辑
 
-输出一条英文 prompt：先写具体场所和用途，再写关键空间关系、时段、材料、照明与画面重心，最后写必要构图和已核对参数。未指定媒介时可以采用与任务相符的提案，不默认真人校园剧。无人或有人取决于目标，不固定 unoccupied。
-
-自然语言结构供内部组织，不原样交空模板：
-
-`[specific place and its function], [time / state]. [spatial organization and key materials]. [visible lighting source, exposure and hierarchy]. [framing and intended medium]. [verified parameters]`
-
-只给 16:9 的任务可使用 `--ar 16:9`；用户没有指定版本时无需添加版本标签。用户确实指定 V8.2 且入口支持时可加 `--v 8.2`。Raw、Stylize 等不是电影感保证，不固定附加数值或负面词。新输入版本或参数应先核对当前官方页；离线时省去不能确认的标记，仍交付视觉文本。
-
-Image Prompt 用来影响内容、构图与颜色；文字应描述最终要出现的画面。Style Reference 用来传递媒介、色彩、质感等风格，不是人物身份锁定。网页使用实际参考入口；命令式 `--sref` 仅搭配用户已提供并可用的真实图片 URL，不为生成 URL 自动上传。本地路径不能直接充当平台 URL。V8.2 的编辑路线与旧身份参考参数不同，勿混入旧版 `--cref` 或 `--oref` 当作通用方案。
+读取 [midjourney](midjourney.md)，按普通 Imagine / Image Prompt、Style Reference 或 Edit Model 选择写法，再按内容复杂度压缩正文。该模块集中维护词量预算、保留优先级、计量工具与官方适配依据；不要直接将完整视觉方案或 GPT Image 的编辑话术复制为普通 MJ prompt。服饰资产先按下文的服饰模块确定形体与范围，再编译为 MJ 成稿。
 
 ## GPT Image 编辑指令
 
@@ -48,12 +40,8 @@ Image Prompt 用来影响内容、构图与颜色；文字应描述最终要出�
 
 ## 官方适配记录
 
-核对日期：2026-09-22。以下为本轮读取官方正文的结果；未登录生成界面、未上传、未执行生成。具体账号与第三方入口设置仍需在使用时确认。
+MJ 的当前核对记录统一见 [midjourney](midjourney.md#官方核对依据)，不在本页维护第二份版本表。
 
-| 模型 / 产品入口 | 已核对用途与实际采用 | 边界 | 官方来源 |
-| --- | --- | --- | --- |
-| Midjourney V8.2；网页 Imagine / Discord | 版本尾缀 `--v 8.2`、画幅 `--ar`；默认成稿只在需要时加已核对参数 | 不固定 Raw、Stylize、质量、种子；未实测账号与输出 | [Version](https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version)、[Parameter List](https://docs.midjourney.com/hc/en-us/articles/32859204029709-Parameter-List) |
-| 同上，图片与风格参考入口 | Image Prompt 与 Style Reference 分工；`--sref` 需实际图片 URL | 参考不等于几何或身份保证；此版本编辑不混用旧引用参数 | [Image Prompts](https://docs.midjourney.com/hc/en-us/articles/32040250122381-Image-Prompts)、[Style Reference](https://docs.midjourney.com/hc/en-us/articles/32180011136653-Style-Reference) |
-| GPT Image 2；OpenAI 模型页描述的图像生成/编辑能力 | 支持图像输入及生成、编辑；本 Skill 仅输出自然语言指令，无 API 参数 | 不将 API 模型能力等同于宿主工具可选版本；尺寸、参考标签、mask 等以实际入口为准 | [GPT Image 2](https://developers.openai.com/api/docs/models/gpt-image-2) |
+GPT Image 核对日期：2026-09-22。[官方模型页](https://developers.openai.com/api/docs/models/gpt-image-2)描述图像输入、生成和编辑能力。本 Skill 仅输出自然语言指令，无 API 参数；不将 API 能力等同于宿主可选版本，尺寸、参考标签、mask 等以实际入口为准。未上传或执行生成。
 
-焦段、色温、HDR、4K 在描述中只是画面意图，不能假装已设置实际输出分辨率或接口参数。需要新参数时追加本次入口、日期、官方依据及不确定项，不修改通用审美。
+焦段、色温、HDR、4K 在描述中只是画面意图，不能假装已设置实际输出分辨率或接口参数。需要新参数时核对本次入口、日期与官方依据，不修改通用审美。

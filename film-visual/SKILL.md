@@ -13,6 +13,7 @@ description: 独立影视视觉开发：风格、构图、画幅、色彩与光�
 | --- | --- | --- |
 | 作品视觉方案；新地点、换状态、补机位 | [visual-development](references/visual-development.md) | 一份具体首选方案；仅完整方案需要 [项目模板](templates/visual-bible.md) 或 [场景模板](templates/scene-visual.md) |
 | 服饰资产设计、单件/整套服装成图、服饰参考编辑或审阅 | [clothing-assets](references/clothing-assets.md)；指定模型时再读 [image-prompts](references/image-prompts.md) 的适配部分 | 按资产范围完成服饰方案、单条成稿或服饰审阅 |
+| MJ / Midjourney prompt、压缩提示词或 MJ 参考编辑 | [midjourney](references/midjourney.md)；服饰内容先按服饰模块设计 | 按入口与信息量编译的一条成稿，保留关键关系 |
 | 其他图像 prompt；人物、道具；参考编辑 | [image-prompts](references/image-prompts.md) 的对应部分 | 一条填好的成稿或单项编辑指令 |
 | 图片哪里不好看；比较视觉方案 | [visual-review](references/visual-review.md) + 已提供的实际材料 | 依据目标的判断、取舍与局部修订建议 |
 | 视频基调、视觉段修订、明确要求的光线动态测试 | [video-look](references/video-look.md) | 直接交付基调、授权修订稿或最小技术测试 |
